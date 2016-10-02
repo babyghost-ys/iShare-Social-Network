@@ -67,6 +67,13 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		AA25F9CC1DA0933D00557EE8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		AA4A84191DA086E600F2B54F = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +95,7 @@
 		AA4A84241DA086E600F2B54F /* iShare */ = {
 			isa = PBXGroup;
 			children = (
+				AA25F9CC1DA0933D00557EE8 /* View */,
 				AA25F9CB1DA0886C00557EE8 /* Controller */,
 				AA4A84251DA086E600F2B54F /* AppDelegate.swift */,
 				AA4A84291DA086E600F2B54F /* Main.storyboard */,
