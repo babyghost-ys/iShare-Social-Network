@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		80269FE8301B182FF261AD49 /* Pods_iShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05BBBFB575C8E769EAA7A180 /* Pods_iShare.framework */; };
+		AA25F9CE1DA0938000557EE8 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA25F9CD1DA0938000557EE8 /* ShadowView.swift */; };
+		AA25F9D01DA093D400557EE8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA25F9CF1DA093D400557EE8 /* Constants.swift */; };
+		AA25F9D21DA0960500557EE8 /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA25F9D11DA0960500557EE8 /* MaterialButton.swift */; };
 		AA4A84261DA086E600F2B54F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4A84251DA086E600F2B54F /* AppDelegate.swift */; };
 		AA4A84281DA086E600F2B54F /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4A84271DA086E600F2B54F /* LogInVC.swift */; };
 		AA4A842B1DA086E600F2B54F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA4A84291DA086E600F2B54F /* Main.storyboard */; };
@@ -19,6 +22,9 @@
 /* Begin PBXFileReference section */
 		05BBBFB575C8E769EAA7A180 /* Pods_iShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		723CEE2FC1982D3FB09D157A /* Pods-iShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iShare/Pods-iShare.debug.xcconfig"; sourceTree = "<group>"; };
+		AA25F9CD1DA0938000557EE8 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		AA25F9CF1DA093D400557EE8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AA25F9D11DA0960500557EE8 /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
 		AA4A84221DA086E600F2B54F /* iShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4A84251DA086E600F2B54F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA4A84271DA086E600F2B54F /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
@@ -70,6 +76,8 @@
 		AA25F9CC1DA0933D00557EE8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AA25F9CD1DA0938000557EE8 /* ShadowView.swift */,
+				AA25F9D11DA0960500557EE8 /* MaterialButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -103,6 +111,7 @@
 				AA4A842E1DA086E600F2B54F /* LaunchScreen.storyboard */,
 				AA4A84371DA0872F00F2B54F /* GoogleService-Info.plist */,
 				AA4A84311DA086E600F2B54F /* Info.plist */,
+				AA25F9CF1DA093D400557EE8 /* Constants.swift */,
 			);
 			path = iShare;
 			sourceTree = "<group>";
@@ -232,8 +241,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA25F9CE1DA0938000557EE8 /* ShadowView.swift in Sources */,
 				AA4A84281DA086E600F2B54F /* LogInVC.swift in Sources */,
 				AA4A84261DA086E600F2B54F /* AppDelegate.swift in Sources */,
+				AA25F9D01DA093D400557EE8 /* Constants.swift in Sources */,
+				AA25F9D21DA0960500557EE8 /* MaterialButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
