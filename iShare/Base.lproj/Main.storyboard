@@ -48,6 +48,9 @@
                                     <constraint firstAttribute="height" constant="30" id="v4r-o5-Ws9"/>
                                 </constraints>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="plainLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dbZ-7p-RFc"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tal-Tf-yZH">
                                 <constraints>
@@ -85,6 +88,10 @@
                             <constraint firstItem="1lL-Nt-dYQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="7" id="zo9-ff-jgX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="1lL-Nt-dYQ" id="IFa-5S-1w7"/>
+                        <outlet property="passwordTextField" destination="tal-Tf-yZH" id="8TH-yg-CIf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

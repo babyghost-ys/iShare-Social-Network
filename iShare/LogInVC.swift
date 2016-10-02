@@ -13,6 +13,9 @@ import Firebase
 
 class LogInVC: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     @IBAction func fbButoonLogin(_ sender: AnyObject) {
         let facebookLogin = FBSDKLoginManager()
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
@@ -38,6 +41,23 @@ class LogInVC: UIViewController {
         })
     }
     
+    @IBAction func plainLogin(_ sender: AnyObject) {
+        if let email = emailTextField.text, let pwd = passwordTextField.text {
+            FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
+                if error == nil{
+                    print("user already existed. login")
+                } else {
+                    FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
+                        if error != nil {
+                            print(error?.localizedDescription)
+                        } else {
+                            print("plain email login ok")
+                        }
+                    })
+                }
+            })
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
