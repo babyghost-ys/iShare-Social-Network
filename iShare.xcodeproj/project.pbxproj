@@ -17,6 +17,7 @@
 		AA4A842D1DA086E600F2B54F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA4A842C1DA086E600F2B54F /* Assets.xcassets */; };
 		AA4A84301DA086E600F2B54F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA4A842E1DA086E600F2B54F /* LaunchScreen.storyboard */; };
 		AA4A84381DA0872F00F2B54F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA4A84371DA0872F00F2B54F /* GoogleService-Info.plist */; };
+		AA8AACB71DA1A63300769E9F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8AACB61DA1A63300769E9F /* FeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		AA4A842F1DA086E600F2B54F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA4A84311DA086E600F2B54F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA4A84371DA0872F00F2B54F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AA8AACB61DA1A63300769E9F /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		AAF223551DA19EB300B6F47C /* iShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iShare.entitlements; sourceTree = "<group>"; };
 		AF392449C1D57B99F7C68388 /* Pods-iShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShare.release.xcconfig"; path = "Pods/Target Support Files/Pods-iShare/Pods-iShare.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				AA4A84271DA086E600F2B54F /* LogInVC.swift */,
+				AA8AACB61DA1A63300769E9F /* FeedViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				AA4A84281DA086E600F2B54F /* LogInVC.swift in Sources */,
 				AA4A84261DA086E600F2B54F /* AppDelegate.swift in Sources */,
 				AA25F9D01DA093D400557EE8 /* Constants.swift in Sources */,
+				AA8AACB71DA1A63300769E9F /* FeedViewController.swift in Sources */,
 				AA25F9D21DA0960500557EE8 /* MaterialButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

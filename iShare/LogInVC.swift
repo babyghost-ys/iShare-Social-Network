@@ -37,6 +37,7 @@ class LogInVC: UIViewController {
                 print(error?.localizedDescription)
             } else {
                 print("Auth ok - Firebase")
+                 self.performSegue(withIdentifier: "showFeed", sender: nil)
             }
         })
     }
@@ -46,12 +47,14 @@ class LogInVC: UIViewController {
             FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
                 if error == nil{
                     print("user already existed. login")
+                    self.performSegue(withIdentifier: "showFeed", sender: nil)
                 } else {
                     FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
                         if error != nil {
                             print(error?.localizedDescription)
                         } else {
                             print("plain email login ok")
+                            self.performSegue(withIdentifier: "showFeed", sender: nil)
                         }
                     })
                 }
