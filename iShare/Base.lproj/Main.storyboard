@@ -38,6 +38,9 @@
                                     <constraint firstAttribute="width" constant="158" id="nXn-dI-O1S"/>
                                 </constraints>
                                 <state key="normal" title="Login with Facebook"/>
+                                <connections>
+                                    <action selector="fbButoonLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0yZ-qL-RjC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQp-oV-0Kb" customClass="MaterialButton" customModule="iShare" customModuleProvider="target">
                                 <constraints>

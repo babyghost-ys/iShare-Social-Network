@@ -33,6 +33,7 @@
 		AA4A842F1DA086E600F2B54F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA4A84311DA086E600F2B54F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA4A84371DA0872F00F2B54F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AAF223551DA19EB300B6F47C /* iShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iShare.entitlements; sourceTree = "<group>"; };
 		AF392449C1D57B99F7C68388 /* Pods-iShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShare.release.xcconfig"; path = "Pods/Target Support Files/Pods-iShare/Pods-iShare.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +104,7 @@
 		AA4A84241DA086E600F2B54F /* iShare */ = {
 			isa = PBXGroup;
 			children = (
+				AAF223551DA19EB300B6F47C /* iShare.entitlements */,
 				AA25F9CC1DA0933D00557EE8 /* View */,
 				AA25F9CB1DA0886C00557EE8 /* Controller */,
 				AA4A84251DA086E600F2B54F /* AppDelegate.swift */,
@@ -153,6 +155,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 2S6B5447W9;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -369,6 +376,7 @@
 			baseConfigurationReference = 723CEE2FC1982D3FB09D157A /* Pods-iShare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iShare/iShare.entitlements;
 				DEVELOPMENT_TEAM = 2S6B5447W9;
 				INFOPLIST_FILE = iShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -383,6 +391,7 @@
 			baseConfigurationReference = AF392449C1D57B99F7C68388 /* Pods-iShare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iShare/iShare.entitlements;
 				DEVELOPMENT_TEAM = 2S6B5447W9;
 				INFOPLIST_FILE = iShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
