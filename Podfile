@@ -6,5 +6,8 @@ target 'iShare' do
   use_frameworks!
 
   # Pods for iShare
-pod 'Firebase'
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+pod 'Firebase/Database'
+pod 'Firebase/Storage'
 end

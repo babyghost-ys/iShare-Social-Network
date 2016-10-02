@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80269FE8301B182FF261AD49 /* Pods_iShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05BBBFB575C8E769EAA7A180 /* Pods_iShare.framework */; };
 		AA4A84261DA086E600F2B54F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4A84251DA086E600F2B54F /* AppDelegate.swift */; };
-		AA4A84281DA086E600F2B54F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4A84271DA086E600F2B54F /* ViewController.swift */; };
+		AA4A84281DA086E600F2B54F /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4A84271DA086E600F2B54F /* LogInVC.swift */; };
 		AA4A842B1DA086E600F2B54F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA4A84291DA086E600F2B54F /* Main.storyboard */; };
 		AA4A842D1DA086E600F2B54F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA4A842C1DA086E600F2B54F /* Assets.xcassets */; };
 		AA4A84301DA086E600F2B54F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA4A842E1DA086E600F2B54F /* LaunchScreen.storyboard */; };
@@ -16,14 +17,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05BBBFB575C8E769EAA7A180 /* Pods_iShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		723CEE2FC1982D3FB09D157A /* Pods-iShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iShare/Pods-iShare.debug.xcconfig"; sourceTree = "<group>"; };
 		AA4A84221DA086E600F2B54F /* iShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4A84251DA086E600F2B54F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA4A84271DA086E600F2B54F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AA4A84271DA086E600F2B54F /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		AA4A842A1DA086E600F2B54F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA4A842C1DA086E600F2B54F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA4A842F1DA086E600F2B54F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA4A84311DA086E600F2B54F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA4A84371DA0872F00F2B54F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AF392449C1D57B99F7C68388 /* Pods-iShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShare.release.xcconfig"; path = "Pods/Target Support Files/Pods-iShare/Pods-iShare.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80269FE8301B182FF261AD49 /* Pods_iShare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08396FDF2B53106D35AF8F21 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				723CEE2FC1982D3FB09D157A /* Pods-iShare.debug.xcconfig */,
+				AF392449C1D57B99F7C68388 /* Pods-iShare.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3F5FBC6C3461E6614C93E306 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05BBBFB575C8E769EAA7A180 /* Pods_iShare.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA25F9CB1DA0886C00557EE8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AA4A84271DA086E600F2B54F /* LogInVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		AA4A84191DA086E600F2B54F = {
 			isa = PBXGroup;
 			children = (
 				AA4A84241DA086E600F2B54F /* iShare */,
 				AA4A84231DA086E600F2B54F /* Products */,
+				08396FDF2B53106D35AF8F21 /* Pods */,
+				3F5FBC6C3461E6614C93E306 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,8 +88,8 @@
 		AA4A84241DA086E600F2B54F /* iShare */ = {
 			isa = PBXGroup;
 			children = (
+				AA25F9CB1DA0886C00557EE8 /* Controller */,
 				AA4A84251DA086E600F2B54F /* AppDelegate.swift */,
-				AA4A84271DA086E600F2B54F /* ViewController.swift */,
 				AA4A84291DA086E600F2B54F /* Main.storyboard */,
 				AA4A842C1DA086E600F2B54F /* Assets.xcassets */,
 				AA4A842E1DA086E600F2B54F /* LaunchScreen.storyboard */,
@@ -74,9 +106,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA4A84341DA086E600F2B54F /* Build configuration list for PBXNativeTarget "iShare" */;
 			buildPhases = (
+				4A3EA23EB9E47EC2EB3BB1D8 /* [CP] Check Pods Manifest.lock */,
 				AA4A841E1DA086E600F2B54F /* Sources */,
 				AA4A841F1DA086E600F2B54F /* Frameworks */,
 				AA4A84201DA086E600F2B54F /* Resources */,
+				EB4E0BD6A3ADAB5F866967A2 /* [CP] Embed Pods Frameworks */,
+				02450CF077E1707E96AC3BEB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,12 +171,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		02450CF077E1707E96AC3BEB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iShare/Pods-iShare-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A3EA23EB9E47EC2EB3BB1D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EB4E0BD6A3ADAB5F866967A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iShare/Pods-iShare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AA4A841E1DA086E600F2B54F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA4A84281DA086E600F2B54F /* ViewController.swift in Sources */,
+				AA4A84281DA086E600F2B54F /* LogInVC.swift in Sources */,
 				AA4A84261DA086E600F2B54F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +346,7 @@
 		};
 		AA4A84351DA086E600F2B54F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 723CEE2FC1982D3FB09D157A /* Pods-iShare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2S6B5447W9;
@@ -276,6 +360,7 @@
 		};
 		AA4A84361DA086E600F2B54F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF392449C1D57B99F7C68388 /* Pods-iShare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2S6B5447W9;
@@ -306,6 +391,7 @@
 				AA4A84361DA086E600F2B54F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
