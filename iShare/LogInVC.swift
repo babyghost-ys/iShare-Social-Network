@@ -38,6 +38,8 @@ class LogInVC: UIViewController {
             } else {
                 print("Auth ok - Firebase")
                  self.performSegue(withIdentifier: "showFeed", sender: nil)
+                let userData = ["provider": credential.provider]
+                DataService.ds.createFirebaseUser(uid: (user?.uid)!, userData: userData as! Dictionary<String, String>)
             }
         })
     }
@@ -55,6 +57,8 @@ class LogInVC: UIViewController {
                         } else {
                             print("plain email login ok")
                             self.performSegue(withIdentifier: "showFeed", sender: nil)
+                            let userData = ["provider": user?.providerID]
+                            DataService.ds.createFirebaseUser(uid: (user?.uid)!, userData: userData as! Dictionary<String, String>)
                         }
                     })
                 }
