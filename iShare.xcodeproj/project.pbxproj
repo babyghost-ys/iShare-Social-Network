@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		80269FE8301B182FF261AD49 /* Pods_iShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05BBBFB575C8E769EAA7A180 /* Pods_iShare.framework */; };
+		AA1DD2C21DA6D45B00ACF2EB /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1DD2C11DA6D45B00ACF2EB /* Posts.swift */; };
 		AA25F9CE1DA0938000557EE8 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA25F9CD1DA0938000557EE8 /* ShadowView.swift */; };
 		AA25F9D01DA093D400557EE8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA25F9CF1DA093D400557EE8 /* Constants.swift */; };
 		AA25F9D21DA0960500557EE8 /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA25F9D11DA0960500557EE8 /* MaterialButton.swift */; };
@@ -18,12 +19,14 @@
 		AA4A842D1DA086E600F2B54F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA4A842C1DA086E600F2B54F /* Assets.xcassets */; };
 		AA4A84301DA086E600F2B54F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA4A842E1DA086E600F2B54F /* LaunchScreen.storyboard */; };
 		AA4A84381DA0872F00F2B54F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA4A84371DA0872F00F2B54F /* GoogleService-Info.plist */; };
+		AA6D325A1DA441420036283C /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D32591DA441420036283C /* PostCell.swift */; };
 		AA8AACB71DA1A63300769E9F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8AACB61DA1A63300769E9F /* FeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		05BBBFB575C8E769EAA7A180 /* Pods_iShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		723CEE2FC1982D3FB09D157A /* Pods-iShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iShare/Pods-iShare.debug.xcconfig"; sourceTree = "<group>"; };
+		AA1DD2C11DA6D45B00ACF2EB /* Posts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
 		AA25F9CD1DA0938000557EE8 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		AA25F9CF1DA093D400557EE8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AA25F9D11DA0960500557EE8 /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		AA4A842F1DA086E600F2B54F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA4A84311DA086E600F2B54F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA4A84371DA0872F00F2B54F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AA6D32591DA441420036283C /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		AA8AACB61DA1A63300769E9F /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		AAF223551DA19EB300B6F47C /* iShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iShare.entitlements; sourceTree = "<group>"; };
 		AF392449C1D57B99F7C68388 /* Pods-iShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShare.release.xcconfig"; path = "Pods/Target Support Files/Pods-iShare/Pods-iShare.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +74,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AA1DD2C01DA6D44F00ACF2EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AA1DD2C11DA6D45B00ACF2EB /* Posts.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		AA25F9CB1DA0886C00557EE8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +96,7 @@
 			children = (
 				AA25F9CD1DA0938000557EE8 /* ShadowView.swift */,
 				AA25F9D11DA0960500557EE8 /* MaterialButton.swift */,
+				AA6D32591DA441420036283C /* PostCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -117,6 +130,7 @@
 		AA4A84241DA086E600F2B54F /* iShare */ = {
 			isa = PBXGroup;
 			children = (
+				AA1DD2C01DA6D44F00ACF2EB /* Model */,
 				AA475F0B1DA321130021AB1F /* Services */,
 				AAF223551DA19EB300B6F47C /* iShare.entitlements */,
 				AA25F9CC1DA0933D00557EE8 /* View */,
@@ -269,6 +283,8 @@
 				AA25F9D01DA093D400557EE8 /* Constants.swift in Sources */,
 				AA8AACB71DA1A63300769E9F /* FeedViewController.swift in Sources */,
 				AA25F9D21DA0960500557EE8 /* MaterialButton.swift in Sources */,
+				AA1DD2C21DA6D45B00ACF2EB /* Posts.swift in Sources */,
+				AA6D325A1DA441420036283C /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

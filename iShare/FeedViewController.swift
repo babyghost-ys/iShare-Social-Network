@@ -7,13 +7,37 @@
 //
 
 import UIKit
+import Firebase
 
-class FeedViewController: UIViewController {
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var posts = [Posts]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+        DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
+            print(snapshot)
+            self.posts = []
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots {
+                    if let postDictionary = snap.value as? Dictionary<String,AnyObject> {
+                        let key = snap.key
+                        let post = Posts(postKey: key, postData: postDictionary)
+                        self.posts.append(post)
+                    }
+                }
+            }
+            self.tableView.reloadData()
+            
+            }) { (error) in
+                print(error)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +45,18 @@ class FeedViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return tableView.dequeueReusableCell(withIdentifier: "postCell") as! PostCell
+
+    }
 
     /*
     // MARK: - Navigation
