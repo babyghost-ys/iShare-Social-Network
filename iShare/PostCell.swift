@@ -19,6 +19,8 @@ class PostCell: UITableViewCell {
     
     @IBOutlet weak var likeslbl: UILabel!
     
+    var post: Posts!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,4 +32,10 @@ class PostCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func configureCell(post: Posts){
+        self.post = post
+        self.caption.text = post.caption
+        self.caption.dataDetectorTypes = .link
+        
+    }
 }
