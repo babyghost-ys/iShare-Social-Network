@@ -120,11 +120,15 @@
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="FXr-Gd-wXn">
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="adj-mb-dUg">
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="adj-mb-dUg">
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="49" id="j7W-Yn-34r"/>
                                                     <constraint firstAttribute="width" constant="49" id="teM-qF-dOI"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="Mts-s8-Q32" appends="YES" id="b0u-tu-0WA"/>
+                                                </connections>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xuk-3Z-YiO">
                                                 <frame key="frameInset" minX="65" width="215" height="49"/>
@@ -155,7 +159,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="286"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JN1-D0-XVj" id="RQX-i5-3ZW">
-                                            <frame key="frameInset" width="375" height="286"/>
+                                            <frame key="frameInset" width="375" height="285"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DnQ-rm-pRZ" customClass="ShadowView" customModule="iShare" customModuleProvider="target">
@@ -163,7 +167,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="bZB-Lw-mOa">
-                                                            <frame key="frameInset" minX="4" minY="6" width="343" height="262"/>
+                                                            <frame key="frameInset" minX="4" minY="6" width="344" height="262"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="wt2-Wj-sXW">
@@ -192,16 +196,16 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YV1-WA-azc">
-                                                                    <frame key="frameInset" minY="72" width="343" height="166"/>
+                                                                    <frame key="frameInset" minY="72" width="344" height="166"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="devslopes-logo" translatesAutoresizingMaskIntoConstraints="NO" id="f06-YS-auf">
-                                                                            <frame key="frameInset" width="343" height="94"/>
+                                                                            <frame key="frameInset" width="344" height="94"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="bAk-Yx-w5X"/>
                                                                             </constraints>
                                                                         </imageView>
                                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" text="http://www.winandmac.com" translatesAutoresizingMaskIntoConstraints="NO" id="h7q-an-5WZ">
-                                                                            <frame key="frameInset" minY="94" width="343" height="72"/>
+                                                                            <frame key="frameInset" minY="94" width="344" height="72"/>
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -218,16 +222,24 @@
                                                                     </constraints>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="12w-8q-UCW">
-                                                                    <frame key="frameInset" minX="115" minY="241" width="113" height="21"/>
+                                                                    <frame key="frameInset" minX="115" minY="241" width="114" height="21"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oE-df-iL5">
                                                                             <frame key="frameInset" width="40" height="21"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="21" id="anv-CT-Sge"/>
+                                                                                <constraint firstAttribute="width" constant="40" id="asc-Tk-pVJ"/>
+                                                                            </constraints>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="8888888" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8CA-Xa-fao">
                                                                             <frame key="frameInset" minX="40" width="74" height="21"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="21" id="HlU-4a-ked"/>
+                                                                                <constraint firstAttribute="width" constant="74" id="IQ0-sX-D6t"/>
+                                                                            </constraints>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -267,10 +279,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addImageImage" destination="adj-mb-dUg" id="kGh-N0-RqV"/>
                         <outlet property="tableView" destination="RLn-cu-LR8" id="qFu-vZ-9Xt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Fv-pn-3Gr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Mts-s8-Q32">
+                    <connections>
+                        <action selector="addImageTapped:" destination="vnd-sD-lND" id="hzc-Nw-Gb1"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="994.39999999999998" y="129.08545727136433"/>
         </scene>

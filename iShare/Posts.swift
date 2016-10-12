@@ -18,7 +18,7 @@ class Posts {
         return _caption
     }
     
-    var imageUrl:String?{
+    var imageUrl:String!{
         return _imageUrl
     }
     

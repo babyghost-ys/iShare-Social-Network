@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PostCell: UITableViewCell {
     
@@ -32,10 +33,28 @@ class PostCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func configureCell(post: Posts){
+    func configureCell(post: Posts, img: UIImage?){
         self.post = post
         self.caption.text = post.caption
         self.caption.dataDetectorTypes = .link
         
+        if img != nil {
+            self.postImg.image = img
+        } else {
+            if let imgURL = post.imageUrl {
+                let REF = FIRStorage.storage().reference(forURL: imgURL)
+                REF.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
+                    if error == nil {
+                        print("ok image")
+                        if let imgData = data {
+                            if let img = UIImage(data: imgData){
+                                self.postImg.image = img
+                                FeedViewController.imageCache.setObject(img, forKey: post.imageUrl as NSString)
+                            }
+                        }
+                    }
+                })
+            }
+        }
     }
 }

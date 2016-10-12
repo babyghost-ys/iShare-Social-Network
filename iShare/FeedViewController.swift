@@ -9,14 +9,22 @@
 import UIKit
 import Firebase
 
-class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addImageImage: UIImageView!
     
     var posts = [Posts]()
+    var imagePicker: UIImagePickerController!
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        
 
         // Do any additional setup after loading the view.
         tableView.delegate = self
@@ -56,7 +64,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post = posts[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "postCell") as? PostCell {
-            cell.configureCell(post: post)
+            if let img = FeedViewController.imageCache.object(forKey: post.imageUrl! as NSString){
+                cell.configureCell(post: post, img: img)
+            } else {
+                
+            }
+            
             return cell
         } else {
             return PostCell()
@@ -65,6 +78,18 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            addImageImage.image = image
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func addImageTapped(_ sender: AnyObject) {
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
 
     /*
     // MARK: - Navigation
