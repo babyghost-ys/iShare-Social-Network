@@ -13,10 +13,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addImageImage: UIImageView!
+    @IBOutlet weak var captionField: UITextField!
     
     var posts = [Posts]()
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
+    var imageSelected = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +35,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             print(snapshot)
             self.posts = []
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                for snap in snapshots {
+                for snap in snapshots.reversed() {
                     if let postDictionary = snap.value as? Dictionary<String,AnyObject> {
                         let key = snap.key
                         let post = Posts(postKey: key, postData: postDictionary)
@@ -84,6 +86,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             addImageImage.image = image
+            imageSelected = true
         }
         dismiss(animated: true, completion: nil)
     }
@@ -92,6 +95,44 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.present(imagePicker, animated: true, completion: nil)
     }
     
+    @IBAction func postAction(_ sender: AnyObject) {
+        guard let caption = captionField.text, caption != "" else {
+            return
+        }
+        
+        guard let img = addImageImage.image else {
+            return
+        }
+        
+        if let imgData = UIImageJPEGRepresentation(img, 0.2) {
+           let imgUUID = NSUUID().uuidString
+            let metaData = FIRStorageMetadata()
+            DataService.ds.REF_POST_IMAGES.child(imgUUID).put(imgData, metadata: metaData, completion: { (metadata, error) in
+                if error == nil {
+                   let downloadURL = metadata?.downloadURL()?.absoluteString
+                    self.postToFireBase(imgurl: downloadURL)
+                }else {
+                    
+                }
+            })
+        }
+        
+    }
+    
+    func postToFireBase(imgurl:String?){
+        let postDict: Dictionary<String,AnyObject> = [
+            "caption": captionField.text! as AnyObject,
+            "imageUrl": imgurl!as AnyObject,
+            "likes": 0 as AnyObject
+        ]
+        
+        let FirebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        FirebasePost.setValue(postDict)
+        
+        captionField.text = ""
+        imageSelected = false
+        addImageImage.image = UIImage(named: "add-image")
+    }
 
     /*
     // MARK: - Navigation
