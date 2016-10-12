@@ -33,7 +33,7 @@ class PostCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func configureCell(post: Posts, img: UIImage?){
+    func configureCell(post: Posts, img: UIImage? = nil){
         self.post = post
         self.caption.text = post.caption
         self.caption.dataDetectorTypes = .link
@@ -49,7 +49,7 @@ class PostCell: UITableViewCell {
                         if let imgData = data {
                             if let img = UIImage(data: imgData){
                                 self.postImg.image = img
-                                FeedViewController.imageCache.setObject(img, forKey: post.imageUrl as NSString)
+                                FeedViewController.imageCache.setObject(img, forKey: imgURL as NSString)
                             }
                         }
                     }

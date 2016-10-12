@@ -64,13 +64,15 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post = posts[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "postCell") as? PostCell {
-            if let img = FeedViewController.imageCache.object(forKey: post.imageUrl! as NSString){
+            if  post.imageUrl != nil, let img = FeedViewController.imageCache.object(forKey: post.imageUrl! as NSString){
                 cell.configureCell(post: post, img: img)
+                return cell
             } else {
-                
+                cell.configureCell(post: post)
+                return cell
             }
             
-            return cell
+
         } else {
             return PostCell()
         }
